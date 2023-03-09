@@ -1,0 +1,43 @@
+
+
+
+    <div class="container">
+        <form action="" [formGroup]="loginform" (ngSubmit)="proceedlogin()" class="form-box">
+            <h2>User Login</h2><br>
+            
+            <div class="form-group">
+              <label>Username: </label>
+              <input type="text" formControlName="id"  id="id"
+              class="form-control mb-3 mt3"/>
+            </div>
+            <br>
+            <div class="form-group">
+                <label>Password: </label>
+                <input type="password" formControlName="password" id="password"
+                class="form-control mb-3 mt3"/>
+            </div>
+            <br><br> 
+
+            <label>
+              Select Department:
+              <select  formControlName="department">
+                <option value="IT">Inofrmation Technology</option>
+                <option value="HR">Human Resources</option>
+                <option value="Finance">Finance</option>
+                <option value="Marketing">Marketing</option>
+              </select>
+            </label>
+
+           
+
+            <br><br> 
+                <button type ="submit" name="log" id="log">Login</button>
+                <br><br>
+                <span> Create a New Account <a routerLink="/register"> Sign Up here </a> </span>
+              </form>
+    </div>
+  
+      
+  
+
+

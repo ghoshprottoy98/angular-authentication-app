@@ -1,0 +1,50 @@
+      
+<div class="container">
+        <form action="" [formGroup]="registerform" (ngSubmit)="proceedregister()" class="form-box">
+          <h2>Registration</h2>
+          
+          <div class="form-group">
+              <label> Username </label>
+              <input type="text" formControlName="id"  id="id"
+              class="form-control mb-3 mt3"/>
+            </div>
+            <br>
+
+            <div class="form-group">
+              <label> Your Name </label>
+              <input type="text" formControlName="name"  id="name"
+              class="form-control mb-3 mt3"/>
+            </div>
+            <br>
+
+            <div class="form-group">
+              <label> Password </label>
+              <input type="password" formControlName="password" id="password"
+              class="form-control mb-3 mt3"/>
+          </div>
+          <br>
+
+          <div class="form-group">
+            <label> Your Email </label>
+            <input type="text" formControlName="email" id="email"
+            class="form-control mb-3 mt3"/>
+        </div>
+        <br>
+
+        <br><br>
+
+              <div class="gender" formControlName="gender">
+                <label>Select an option</label>
+                <br>
+                <input type="radio" id="male" name="gender" value="male">
+                <label>Male</label>
+                <input type="radio" id="female" name="gender" value="female">
+                <label>Female</label>
+              </div>
+      <br><br>
+              <div>
+                <button type ="submit" name="log" id="log">Submit</button>
+                <a routerLink="/login">Back to Login</a>
+              </div>
+          </form>
+ </div>
