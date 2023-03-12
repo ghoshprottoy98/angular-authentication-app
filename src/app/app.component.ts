@@ -8,6 +8,7 @@ import { ActivatedRoute, Route, Router } from '@angular/router';
 })
 export class AppComponent implements DoCheck, OnInit {
   title = 'authentication';
+  isMenuOpen=false;
   isadmin=false;
   isMenuVisible=false;
   userDisplayName='';
@@ -43,6 +44,10 @@ export class AppComponent implements DoCheck, OnInit {
   ngOnInit() {
     this.userDisplayName = sessionStorage.getItem('username');
     this.userDepartment = sessionStorage.getItem('department');
-    
-}
+    }
+
+
+    toggleMenu():void{
+      this.isMenuOpen = !this.isMenuOpen;
+    }
 }

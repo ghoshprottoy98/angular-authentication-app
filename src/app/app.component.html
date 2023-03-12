@@ -1,18 +1,29 @@
 
-<div class="toolbar" *ngIf="isMenuVisible" role="banner">
-    <div class="logo">
-      My App
-   </div>
+<header class="header" *ngIf="isMenuVisible" role="banner">
+ 
+  <nav id="my-first">
+  <ul>
+  
+    <li class="logo">
+  <span> My App</span>
+  </li>
    
-  <div class="nav"><a routerLink="">Home</a> </div>
-  <div class="nav"><a *ngIf="isadmin" routerLink="/user">User</a></div>
-  <div class="nav"><a routerLink="/customer">Customer</a></div>
-  <div class="spacer"></div>
+  <li class="burger" (click)="toggleMenu()">
+    <i class="material-icons">{{isMenuOpen ? "close" : "menu"}}</i>
+    </li>
 
-  <div class="nav"><span>{{userDisplayName}}</span> </div>
-  <div class="nav"><span>{{userDepartment}}</span> </div>
-  <div class="nav"><a routerLink="/login">Log Out</a></div>
-  </div>
+    <li class="menu" [class.is-open]="isMenuOpen">
+    <a class="menu-item"><span>{{userDisplayName}}</span> </a> 
+    <a class="menu-item"><span>{{userDepartment}}</span> </a>
+    <a class="menu-item" href="">Home</a>
+    <a class="menu-item" *ngIf="isadmin" href="/user">User</a>
+    <a class="menu-item" href="/customer">Customer</a>
+    <a class="menu-item" routerLink="/login">Log Out</a>
+  </li>
+  </ul>
+</nav>
+
+</header>
 
 <div class="content" style="width: 100%;display: block;" role="main">
   <router-outlet></router-outlet>
