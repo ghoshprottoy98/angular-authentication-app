@@ -17,7 +17,7 @@ import { SalesGuard } from './guard/sales.guard';
 
 
 const routes: Routes = [
- {path: '', pathMatch: 'full', redirectTo: 'admin'},
+ {path:'', pathMatch: 'full', redirectTo: 'login'},
  {component:LoginComponent,path:'login'},
  {component:RegisterComponent,path:'register'},
  {component:HomeComponent,path:'admin',canActivate:[AuthGuard]},

@@ -11,14 +11,16 @@
             
             <div class="form-group">
               <label>Username: </label>
-              <input type="text" formControlName="id"  id="id"
+              <input required [(ngModel)]="username" type="text" ngModel class="form-control" formControlName="id"  id="id"
               class="form-control mb-3 mt3"/>
+              <span *ngIf="username.invalid && username.touched" class="error"> Username is required</span> 
             </div>
             <br>
             <div class="form-group">
                 <label>Password: </label>
-                <input type="password" formControlName="password" id="password"
+                <input required [(ngModel)]="password" minlength="5" type="password" ngModel class="form-control" formControlName="password" id="password"
                 class="form-control mb-3 mt3"/>
+                <span *ngIf="password.invalid && password.touched" class="error"> Password is required</span> 
             </div>
             <br><br> 
 
@@ -36,7 +38,7 @@
            
 
             <br><br> 
-                <button type ="submit" name="log" id="log">Login</button>
+                <button [disabled]="loginform.invalid" type ="submit" name="log" id="log">Login</button>
                 <br><br>
                 <span> Create a New Account <a routerLink="/register"> Sign Up here </a> </span>
               </form>

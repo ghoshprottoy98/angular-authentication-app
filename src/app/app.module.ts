@@ -8,12 +8,11 @@ import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { UserComponent } from './user/user.component';
-import {ReactiveFormsModule} from '@angular/forms';
-import {MaterialModule} from 'src/material.module';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { MaterialModule } from 'src/material.module';
 import {HttpClientModule} from '@angular/common/http';
 import { ToastrModule } from 'ngx-toastr';
 import { UpdatepopupComponent } from './updatepopup/updatepopup.component';
-import { FormsModule } from '@angular/forms';
 import { ErrorComponent } from './error/error.component';
 import { HumanresComponent } from './humanres/humanres.component';
 import { MarketingComponent } from './marketing/marketing.component';
@@ -35,6 +34,7 @@ import { NavbarComponent } from './navbar/navbar.component';
     FinanceComponent,
     SalesComponent,
     NavbarComponent,
+
   
   ],
   
