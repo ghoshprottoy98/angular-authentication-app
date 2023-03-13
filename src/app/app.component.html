@@ -1,31 +1,5 @@
 
-<header class="header" *ngIf="isMenuVisible" role="banner">
- 
-  <nav id="my-first">
-  <ul>
-  
-    <li class="logo">
-  <span> My App</span>
-  </li>
-   
-  <li class="burger" (click)="toggleMenu()">
-    <i class="material-icons">{{isMenuOpen ? "close" : "menu"}}</i>
-    </li>
 
-    <li class="menu" [class.is-open]="isMenuOpen">
-    <a class="menu-item"><span>{{userDisplayName}}</span> </a> 
-    <a class="menu-item"><span>{{userDepartment}}</span> </a>
-    <a class="menu-item" href="">Home</a>
-    <a class="menu-item" *ngIf="isadmin" href="/user">User</a>
-    <a class="menu-item" href="/customer">Customer</a>
-    <a class="menu-item" routerLink="/login">Log Out</a>
-  </li>
-  </ul>
-</nav>
+ <router-outlet></router-outlet>
 
-</header>
-
-<div class="content" style="width: 100%;display: block;" role="main">
-  <router-outlet></router-outlet>
-</div>
 

@@ -1,0 +1,30 @@
+<header class="header" role="banner">
+ 
+    <nav id="my-first">
+    <ul>
+    
+    <li class="logo">
+    <span> My App</span>
+    <span>{{userDisplayName}}</span> 
+    <span>{{userDepartment}}</span> 
+    </li>
+  
+     
+    <li class="burger" (click)="toggleMenu()">
+      <i class="material-icons">{{isMenuOpen ? "close" : "menu"}}</i>
+      </li>
+  
+      <li class="menu" [class.is-open]="isMenuOpen">
+      <a class="menu-item" *ngIf="isadmin" href=""> Home </a>
+      <a class="menu-item" *ngIf="isadmin" href="/user">User</a>
+      <a class="menu-item" *ngIf="isHR" href="/humanres">Home </a>
+      <a class="menu-item" *ngIf="isfinance" href="/finance">Home </a>
+      <a class="menu-item" *ngIf="ismarketing" href="/marketing">Home </a>
+      <a class="menu-item" *ngIf="issales" href="/sales">Home </a>
+      <a class="menu-item" routerLink="/login">Log Out</a>
+    </li>
+    </ul>
+  </nav>
+  
+  </header>
+  

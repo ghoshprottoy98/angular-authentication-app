@@ -13,8 +13,13 @@ import {MaterialModule} from 'src/material.module';
 import {HttpClientModule} from '@angular/common/http';
 import { ToastrModule } from 'ngx-toastr';
 import { UpdatepopupComponent } from './updatepopup/updatepopup.component';
-import { CustomerComponent } from './customer/customer.component';
 import { FormsModule } from '@angular/forms';
+import { ErrorComponent } from './error/error.component';
+import { HumanresComponent } from './humanres/humanres.component';
+import { MarketingComponent } from './marketing/marketing.component';
+import { FinanceComponent } from './finance/finance.component';
+import { SalesComponent } from './sales/sales.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -24,8 +29,15 @@ import { FormsModule } from '@angular/forms';
     HomeComponent,
     UserComponent,
     UpdatepopupComponent,
-    CustomerComponent
+    ErrorComponent,
+    HumanresComponent,
+    MarketingComponent,
+    FinanceComponent,
+    SalesComponent,
+    NavbarComponent,
+  
   ],
+  
   imports: [
     BrowserModule,
     AppRoutingModule,

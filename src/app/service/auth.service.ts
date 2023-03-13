@@ -11,33 +11,36 @@ export class AuthService {
   }
   apiurl='http://localhost:3000/user';
 
-  RegisterUser(inputdata:any){
+
+
+  registerUser(inputdata:any){
     return this.http.post(this.apiurl,inputdata)
   }
-  GetUserbyCode(id:any){
+  getUserByCode(id:any){
     return this.http.get(this.apiurl+'/'+id);
   }
-  Getall(){
+  getAll(){
     return this.http.get(this.apiurl);
   }
-  updateuser(id:any,inputdata:any){
+  updateUser(id:any,inputdata:any){
     return this.http.put(this.apiurl+'/'+id,inputdata);
   }
-  getuserrole(){
+  getUserRole(){
     return this.http.get('http://localhost:3000/role');
   }
-  isloggedin(){
+  
+  isLoggedIn(){
     return sessionStorage.getItem('username')!=null;
   }
-  getrole(){
+  getDept(){
+    return sessionStorage.getItem('department')!=null?sessionStorage.getItem('department')?.toString():'';
+  }
+  getRole(){
     return sessionStorage.getItem('role')!=null?sessionStorage.getItem('role')?.toString():'';
   }
-  GetAllCustomer(){
-    return this.http.get('http://localhost:3000/customer');
-  }
-  Getaccessbyrole(role:any,menu:any){
+ 
+  getAccessByRole(role:any,menu:any){
     return this.http.get('http://localhost:3000/roleaccess?role='+role+'&menu='+menu)
   }
-
   
 }

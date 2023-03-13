@@ -21,13 +21,14 @@ export class RegisterComponent {
     name: this.builder.control('', Validators.required),
     password: this.builder.control('', Validators.compose([Validators.required, Validators.pattern('(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&].{8,}')])),
     email: this.builder.control('', Validators.compose([Validators.required, Validators.email])),
-    gender: this.builder.control('male'),
+    department: this.builder.control('', Validators.required),
     role: this.builder.control(''),
     isactive: this.builder.control(false)
   });
-  proceedregister() {
+
+  proceedRegister() {
     if (this.registerform.valid) {
-      this.service.RegisterUser(this.registerform.value).subscribe(result => {
+      this.service.registerUser(this.registerform.value).subscribe(result => {
         this.toastr.success('Please contact admin for enable access.','Registered successfully')
         this.router.navigate(['login'])
       });

@@ -5,72 +5,90 @@
       "name": "NT Infotech",
       "password": "Test$1234",
       "email": "test@gmail.com",
-      "gender": "male",
       "role": "admin",
       "department": "IT",
-      "isactive": true,
-      "address": {
-        "area": "chennai"
-       
-      }
+      "isactive": true
+  
     },
     {
       "id": "testuser",
       "name": "Test User",
       "password": "Test@1234",
       "email": "test@in.com",
-      "gender": "male",
-      "role": "user",
+      "role": "HR",
       "department": "HR",
       "isactive": true
     },
     {
       "id": "Jhon1",
-      "name": "NT Infotech",
+      "name": "John Doe",
       "password": "Test@1233",
       "email": "te@in.com",
-      "gender": "male",
-      "role": "tech",
+      "role": "Finance",
       "department": "Finance",
-      "isactive": true,
-      "address": {
-        "area": "chennai"
-      }
+      "isactive": true
     },
     {
       "id": "ntuser",
-      "name": "ramesh",
+      "name": "Jack Strokes",
       "password": "Test@1234",
       "email": "te@in.com",
-      "gender": "male",
-      "role": "tech",
-      "department": "Marketing" ,
-      "isactive": true,
-      "address": {
-        "area": "banglore"
-      }
-    }
-  ],
-  "role": [
-    {
-      "code": "user",
-      "name": "User"
+      "role": "Marketing",
+      "department": "Marketing",
+      "isactive": true
     },
     {
-      "code": "tech",
-      "name": "Technician"
+      "id": "janedoe",
+      "name": "Jane Doe",
+      "password": "Test@1234",
+      "role": "Sales",
+      "department": "Sales",
+      "isactive": true
     }
   ],
+
+  "role": [
+    {
+      "code": "HR",
+      "name": "HR"
+    },
+    {
+      "code": "Finance",
+      "name": "Finance"
+    },
+    {
+      "code": "Marketing",
+      "name": "Marketing"
+    },
+    {
+      "code": "Sales",
+      "name": "Sales"
+    }
+  ],
+
   "menu": [
     {
       "code": "user",
       "name": "User"
     },
     {
-      "code": "customer",
-      "name": "Customer"
+      "code": "user2",
+      "name": "User2"
+    },
+    {
+      "code": "user3",
+      "name": "User3"
+    },
+    {
+      "code": "user4",
+      "name": "User4"
+    },
+    {
+      "code": "user5",
+      "name": "User5"
     }
   ],
+
   "roleaccess": [
     {
       "role": "admin",
@@ -100,32 +118,6 @@
       "haveadd": true,
       "havedelete": false
     }
-  ],
-  "customer": [
-    {
-      "id": 1,
-      "name": "rakhesh",
-      "Creditlimit": 1000
-    },
-    {
-      "id": 2,
-      "name": "rahul",
-      "Creditlimit": 1000
-    },
-    {
-      "id": 3,
-      "name": "ramesh",
-      "Creditlimit": 1000
-    },
-    {
-      "id": 4,
-      "name": "rahim",
-      "Creditlimit": 1000
-    },
-    {
-      "id": 5,
-      "name": "robert",
-      "Creditlimit": 1000
-    }
   ]
+  
 }

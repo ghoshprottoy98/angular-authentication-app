@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms'
 import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
@@ -6,17 +6,23 @@ import { MatSort } from '@angular/material/sort';
 import { AuthService } from '../service/auth.service';
 import { MatDialog } from '@angular/material/dialog';
 import { UpdatepopupComponent } from '../updatepopup/updatepopup.component'
+import { ActivatedRoute, Route, Router } from '@angular/router';
 
 @Component({
   selector: 'app-user',
   templateUrl: './user.component.html',
   styleUrls: ['./user.component.css']
 })
-export class UserComponent implements AfterViewInit {
+export class UserComponent implements AfterViewInit, OnInit
+{
+ 
 
-  constructor(private builder: FormBuilder, private service: AuthService, private dialog: MatDialog) {
-    this.LoadUser();
+  constructor(private builder: FormBuilder, private route: Router, private service: AuthService, private dialog: MatDialog) {
+    this.loadUser();
   }
+
+ 
+  userDisplayName='';
   userlist: any;
   dataSource: any;
   @ViewChild(MatPaginator) paginator!: MatPaginator;
@@ -25,8 +31,8 @@ export class UserComponent implements AfterViewInit {
   ngAfterViewInit(): void {
 
   }
-  LoadUser() {
-    this.service.Getall().subscribe(res => {
+  loadUser() {
+    this.service.getAll().subscribe(res => {
       this.userlist = res;
       this.dataSource = new MatTableDataSource(this.userlist);
       this.dataSource.paginator = this.paginator;
@@ -49,10 +55,13 @@ export class UserComponent implements AfterViewInit {
       }
     });
     popup.afterClosed().subscribe(res => {
-      this.LoadUser();
+      this.loadUser();
     });
   }
 
+  ngOnInit() {
+    this.userDisplayName = sessionStorage.getItem('username');
+  }
 
 
 }
