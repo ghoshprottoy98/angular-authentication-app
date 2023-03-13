@@ -41,6 +41,7 @@
       "id": "janedoe",
       "name": "Jane Doe",
       "password": "Test@1234",
+      "email": "te@in.com",
       "role": "Sales",
       "department": "Sales",
       "isactive": true
