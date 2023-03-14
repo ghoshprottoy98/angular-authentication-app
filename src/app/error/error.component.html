@@ -3,5 +3,13 @@
 <div class="container">
     <h1>Error 404</h1>
     <p>The page you are looking for is not available or you don't have access.</p>
-    <span>Go back to <a href="/login">Login</a></span>
+
+
+    <span>Go back to  <a  href="/login"> Login </a></span>
+                      <a  *ngIf="isadmin" href=" "> Home </a>
+                      <a  *ngIf="isHR" href="/humanres"> Home </a>
+                      <a  *ngIf="isfinance" href="/finance"> Home </a>
+                      <a  *ngIf="ismarketing" href="/marketing"> Home </a>
+                      <a  *ngIf="issales" href="/sales"> Home </a>
+
 </div>

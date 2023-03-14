@@ -8,7 +8,6 @@
       "role": "admin",
       "department": "IT",
       "isactive": true
-  
     },
     {
       "id": "testuser",
@@ -45,9 +44,17 @@
       "role": "Sales",
       "department": "Sales",
       "isactive": true
+    },
+    {
+      "id": "betauser",
+      "name": "Terry Smith",
+      "password": "Test$1234",
+      "email": "te@bd.com",
+      "department": "Sales",
+      "role": "Sales",
+      "isactive": true 
     }
   ],
-
   "role": [
     {
       "code": "HR",
@@ -66,30 +73,13 @@
       "name": "Sales"
     }
   ],
-
   "menu": [
     {
       "code": "user",
       "name": "User"
-    },
-    {
-      "code": "user2",
-      "name": "User2"
-    },
-    {
-      "code": "user3",
-      "name": "User3"
-    },
-    {
-      "code": "user4",
-      "name": "User4"
-    },
-    {
-      "code": "user5",
-      "name": "User5"
     }
+  
   ],
-
   "roleaccess": [
     {
       "role": "admin",
@@ -120,5 +110,4 @@
       "havedelete": false
     }
   ]
-  
 }
