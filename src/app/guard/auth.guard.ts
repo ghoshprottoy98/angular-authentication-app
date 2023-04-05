@@ -23,6 +23,26 @@ export class AuthGuard implements CanActivate {
         return true;
       
       }
+      if(this.service.getRole() == 'Finance')
+      { 
+        return true;
+      
+      }
+      if(this.service.getRole() == 'HR')
+      { 
+        return true;
+      
+      }
+      if(this.service.getRole() == 'Marketing')
+      { 
+        return true;
+      
+      }
+      if(this.service.getRole() == 'Sales')
+      { 
+        return true;
+      
+      }
 
       else
       {

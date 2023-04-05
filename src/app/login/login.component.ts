@@ -48,16 +48,33 @@ export class LoginComponent {
             }
 
             if (this.result.department === 'HR')
-            {this.router.navigate(['/humanres']);}
+            {
+              const returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
+              this.router.navigateByUrl(returnUrl);
+         
+            }
 
             if (this.result.department === 'Finance')
-            {this.router.navigate(['/finance']);}
+            {
+              
+              const returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
+              this.router.navigateByUrl(returnUrl);
+         
+            }
 
             if (this.result.department === 'Marketing')
-            {this.router.navigate(['/marketing']);}
+            {
+              const returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
+              this.router.navigateByUrl(returnUrl);
+         
+            }
 
             if (this.result.department === 'Sales')
-            {this.router.navigate(['/sales']);}
+            {
+              const returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
+              this.router.navigateByUrl(returnUrl);
+         
+            }
 
           } 
           

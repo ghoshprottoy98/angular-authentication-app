@@ -28,7 +28,8 @@ export class FinanceGuard implements CanActivate {
         }
       }
      
-      return this.router.navigate(['/error']);
+      return this.router.navigate(['/login'],{ queryParams: { returnUrl: state.url }} );
+      return false;
   
     }
   
