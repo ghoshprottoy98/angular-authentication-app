@@ -20,6 +20,7 @@ export class SalesGuard implements CanActivate {
         if(this.service.getRole() == 'Sales')
         { 
           return true;
+       
         
         }
   
@@ -29,7 +30,8 @@ export class SalesGuard implements CanActivate {
         }
       }
      
-      return this.router.navigate(['/error']);
+      return this.router.navigate(['/login'],{ queryParams: { returnUrl: state.url }} );
+      return false;
   
     }
   
