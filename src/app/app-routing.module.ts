@@ -14,6 +14,8 @@ import { FinanceGuard } from './guard/finance.guard';
 import { HrGuard } from './guard/hr.guard';
 import { MarketingGuard } from './guard/marketing.guard';
 import { SalesGuard } from './guard/sales.guard';
+import { AboutComponent } from './about/about.component';
+import { HelloComponent } from './hello/hello.component';
 
 
 const routes: Routes = [
@@ -22,10 +24,12 @@ const routes: Routes = [
  {component:RegisterComponent,path:'register'},
  {component:HomeComponent,path:'admin',canActivate:[AuthGuard]},
  {component:UserComponent,path:'user',canActivate:[AuthGuard]},
- {component:FinanceComponent, path:'finance', canActivate:[FinanceGuard]},
- {component:HumanresComponent, path:'humanres', canActivate:[HrGuard]},
- {component:SalesComponent, path:'sales', canActivate:[SalesGuard]},
- {component:MarketingComponent, path:'marketing', canActivate:[MarketingGuard]},
+ {component:FinanceComponent, path:'finance', canActivate:[AuthGuard]},
+ {component:HumanresComponent, path:'humanres', canActivate:[AuthGuard]},
+ {component:SalesComponent, path:'sales', canActivate:[AuthGuard]},
+ {component:MarketingComponent, path:'marketing', canActivate:[AuthGuard]},
+ {component:AboutComponent,path:'about',canActivate:[AuthGuard]},
+ {component:HelloComponent,path:'hello', canActivate:[AuthGuard]},
  {component:ErrorComponent, path:'**'}
 
 ];

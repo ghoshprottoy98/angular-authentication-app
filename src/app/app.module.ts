@@ -19,6 +19,9 @@ import { MarketingComponent } from './marketing/marketing.component';
 import { FinanceComponent } from './finance/finance.component';
 import { SalesComponent } from './sales/sales.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { AboutComponent } from './about/about.component';
+import { HelloComponent } from './hello/hello.component';
+
 
 @NgModule({
   declarations: [
@@ -34,8 +37,9 @@ import { NavbarComponent } from './navbar/navbar.component';
     FinanceComponent,
     SalesComponent,
     NavbarComponent,
+    AboutComponent,
+    HelloComponent,
 
-  
   ],
   
   imports: [

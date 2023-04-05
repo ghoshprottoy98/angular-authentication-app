@@ -7,7 +7,7 @@ import { AuthService } from '../service/auth.service';
 import { MatDialog } from '@angular/material/dialog';
 import { UpdatepopupComponent } from '../updatepopup/updatepopup.component'
 import { ActivatedRoute, Route, Router } from '@angular/router';
-
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 @Component({
   selector: 'app-user',
   templateUrl: './user.component.html',
@@ -17,11 +17,13 @@ export class UserComponent implements AfterViewInit, OnInit
 {
  
 
-  constructor(private builder: FormBuilder, private route: Router, private service: AuthService, private dialog: MatDialog) {
+  constructor(private builder: FormBuilder, private route: Router, private service: AuthService, private dialog: MatDialog,
+     private http:HttpClient ) {
     this.loadUser();
   }
 
  
+
   userDisplayName='';
   userlist: any;
   dataSource: any;
@@ -61,7 +63,10 @@ export class UserComponent implements AfterViewInit, OnInit
 
   ngOnInit() {
     this.userDisplayName = sessionStorage.getItem('username');
+
+  
   }
+
 
 
 }

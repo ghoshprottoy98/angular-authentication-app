@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { ToastrService } from 'ngx-toastr'
 import { AuthService } from '../service/auth.service';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+
 
 @Component({
   selector: 'app-login',
@@ -12,7 +13,7 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 })
 export class LoginComponent {
   constructor(private builder: FormBuilder, private toastr: ToastrService, private service: AuthService,
-    private router: Router) {
+    private router: Router, private route:ActivatedRoute) {
       sessionStorage.clear();
 
   }
@@ -39,7 +40,12 @@ export class LoginComponent {
             sessionStorage.setItem('department',this.result.department);
 
             if (this.result.department === 'IT')
-            {this.router.navigate(['']);}
+            {
+                      const returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
+                      this.router.navigateByUrl(returnUrl);
+                 
+
+            }
 
             if (this.result.department === 'HR')
             {this.router.navigate(['/humanres']);}
