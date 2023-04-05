@@ -32,53 +32,30 @@ export class LoginComponent {
     if (this.loginform.valid) {
       this.service.getUserByCode(this.loginform.value.id).subscribe(item => {
         this.result = item;
-        if (this.result.password === this.loginform.value.password  && this.result.department === this.loginform.value.department) 
-        {
+        if (this.result.password === this.loginform.value.password && this.result.department === this.loginform.value.department) {
           if (this.result.isactive) {
-            sessionStorage.setItem('username',this.result.id);
-            sessionStorage.setItem('role',this.result.role);
-            sessionStorage.setItem('department',this.result.department);
-
-            if (this.result.department === 'IT')
-            {
-                      const returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
-                      this.router.navigateByUrl(returnUrl);
-                 
-
+            sessionStorage.setItem('username', this.result.id);
+            sessionStorage.setItem('role', this.result.role);
+            sessionStorage.setItem('department', this.result.department);
+  
+            let returnUrl = this.route.snapshot.queryParams['returnUrl'];
+            if (!returnUrl) {
+    
+              if (this.result.department === 'IT') {
+                returnUrl = '/';
+              } else if (this.result.department === 'HR') {
+                returnUrl = '/humanres';
+              } else if (this.result.department === 'Finance') {
+                returnUrl = '/finance';
+              } else if (this.result.department === 'Marketing') {
+                returnUrl = '/marketing';
+              } else if (this.result.department === 'Sales') {
+                returnUrl = '/sales';
+              }
             }
-
-            if (this.result.department === 'HR')
-            {
-              const returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
-              this.router.navigateByUrl(returnUrl);
-         
-            }
-
-            if (this.result.department === 'Finance')
-            {
-              
-              const returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
-              this.router.navigateByUrl(returnUrl);
-         
-            }
-
-            if (this.result.department === 'Marketing')
-            {
-              const returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
-              this.router.navigateByUrl(returnUrl);
-         
-            }
-
-            if (this.result.department === 'Sales')
-            {
-              const returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
-              this.router.navigateByUrl(returnUrl);
-         
-            }
-
-          } 
-          
-          else {
+  
+            this.router.navigateByUrl(returnUrl || '/');
+          } else {
             this.toastr.error('Please contact Admin', 'InActive User');
           }
         } else {
@@ -89,4 +66,4 @@ export class LoginComponent {
       this.toastr.warning('Please enter valid data.')
     }
   }
-}
+}  
