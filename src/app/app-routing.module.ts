@@ -28,7 +28,7 @@ const routes: Routes = [
  {component:HumanresComponent, path:'humanres', canActivate:[HrGuard]},
  {component:SalesComponent, path:'sales', canActivate:[SalesGuard]},
  {component:MarketingComponent, path:'marketing', canActivate:[MarketingGuard]},
- {component:AboutComponent,path:'about',canActivate:[AuthGuard]},
+ {component:AboutComponent,path:'finance/about',canActivate:[FinanceGuard]},
  {component:HelloComponent,path:'hello', canActivate:[AuthGuard]},
  {component:ErrorComponent, path:'**'}
 
